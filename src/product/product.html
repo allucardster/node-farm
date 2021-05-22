@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>🌽 Node Farm 🥦</h1>
+  <figure class="product">
+    <div class="product__organic ${ organic ? '' : 'not-organic' }"><h5>Organic</h5></div>
+    <a href="/overview" class="product__back">
+      <span class="emoji-left">👈</span>Back
+    </a>
+    <div class="product__hero">
+      <span class="product__emoji product__emoji--1">${image}</span>
+      <span class="product__emoji product__emoji--2">${image}</span>
+      <span class="product__emoji product__emoji--3">${image}</span>
+      <span class="product__emoji product__emoji--4">${image}</span>
+      <span class="product__emoji product__emoji--5">${image}</span>
+      <span class="product__emoji product__emoji--6">${image}</span>
+      <span class="product__emoji product__emoji--7">${image}</span>
+      <span class="product__emoji product__emoji--8">${image}</span>
+      <span class="product__emoji product__emoji--9">${image}</span>
+    </div>
+    <h2 class="product__name">${productName}</h2>
+    <div class="product__details">
+      <p><span class="emoji-left">🌍</span>From ${from}</p>
+      <p><span class="emoji-left">❤️</span>${nutrients}</p>
+      <p><span class="emoji-left">📦</span>${quantity}</p>
+      <p><span class="emoji-left">🏷</span>${price}€</p>
+    </div>
+    <a href="#" class="product__link">
+      <span class="emoji-left">🛒</span>
+      <span>Add to shopping card (${price}€)</span>
+    </a>
+    <p class="product__description">
+      ${description}
+    </p>
+  </figure>
+</div>
