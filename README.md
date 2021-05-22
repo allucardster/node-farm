@@ -20,3 +20,5 @@ Contributors
 ============
 
 - Richard Melo [Twitter](https://twitter.com/allucardster), [Linkedin](https://www.linkedin.com/in/richardmelo)
+
+*Note: CSS and HTML was taken from [Complete Node Bootcamp](https://github.com/jonasschmedtmann/complete-node-bootcamp). For more information check the [NodeJS bootcamp course](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/) ;)*
