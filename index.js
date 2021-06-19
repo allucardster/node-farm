@@ -1,5 +1,4 @@
 const http = require('http');
-const url = require('url');
 const app = require('./src');
 
 const server = http.createServer((req, res) => {
