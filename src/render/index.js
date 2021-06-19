@@ -9,18 +9,18 @@ const template = (path, data) => {
 
     return closure(...vals);
   } catch (error) {
-    throwError(error)
+    throwError(error);
   }
-}
+};
 
 const throwError = (errorMessage, code) => {
   throw {
     errorMessage,
-    code: code || 500
-  }
-}
+    code: code || 500,
+  };
+};
 
 module.exports = {
   template,
-  throwError
-}
+  throwError,
+};

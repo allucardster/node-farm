@@ -3,7 +3,9 @@ const app = require('./src');
 
 const getUrl = (req) => {
   const reqUrl = new URL(req.url, `http://${req.headers.host}`);
-  const productSlug = (reqUrl.pathname.match(/(?<=\/product\/).*$/gm) || [null]).pop();
+  const productSlug = (
+    reqUrl.pathname.match(/(?<=\/product\/).*$/gm) || [null]
+  ).pop();
 
   if (null !== productSlug) {
     reqUrl.pathname = '/product';
@@ -11,14 +13,14 @@ const getUrl = (req) => {
   }
 
   return reqUrl;
-}
+};
 
 const server = http.createServer((req, res) => {
   const reqUrl = getUrl(req);
-  
+
   switch (reqUrl.pathname) {
     case '/overview':
-      res.writeHead(301, 'Redirecting to "/"', {'Location': '/'});
+      res.writeHead(301, 'Redirecting to "/"', { Location: '/' });
       res.end();
       break;
     case '/product':
@@ -29,7 +31,7 @@ const server = http.createServer((req, res) => {
       app.overviewController(res);
       break;
     default:
-      res.writeHead(404, {'Content-type': 'text/html'});
+      res.writeHead(404, { 'Content-type': 'text/html' });
       res.end('<h1>Page Not Found</h1>');
       break;
   }

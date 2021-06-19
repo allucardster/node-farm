@@ -1,18 +1,20 @@
 const fs = require('fs');
 const slugify = require('slugify');
 
-const data = JSON.parse(fs.readFileSync(`${__dirname}/data.json`, 'utf-8')).map((item) => {
-  item.slug = slugify(item.productName, {lower: true});
-  return item;
-});
+const data = JSON.parse(fs.readFileSync(`${__dirname}/data.json`, 'utf-8')).map(
+  (item) => {
+    item.slug = slugify(item.productName, { lower: true });
+    return item;
+  }
+);
 
 const dataSlugs = data.reduce((obj, item) => {
-  return {...obj, [item.slug] : item.id};
+  return { ...obj, [item.slug]: item.id };
 }, {});
 
 const findAll = () => {
   return data;
-}
+};
 
 const findById = (id) => {
   if (null === id) {
@@ -20,7 +22,7 @@ const findById = (id) => {
   }
 
   return data[id] || null;
-}
+};
 
 const findBySlug = (slug) => {
   if (null === slug || !(typeof slug === 'string' || slug instanceof String)) {
@@ -30,10 +32,10 @@ const findBySlug = (slug) => {
   if (slug in dataSlugs) {
     return findById(dataSlugs[slug]);
   }
-}
+};
 
 module.exports = {
   findAll,
   findById,
-  findBySlug
-}
+  findBySlug,
+};
