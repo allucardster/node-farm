@@ -1,7 +1,7 @@
 {
   "name": "node-farm",
   "version": "1.0.0",
-  "description": "Web page to show overview and detailed \"farm\" products using Node.js",
+  "description": "Web app to show overview and detailed farm products using Node.js (no framework).",
   "main": "index.js",
   "directories": {
     "doc": "docs"

@@ -1,6 +1,6 @@
 Node Farm
 =========
-Starter project to show overview and detailed products from a farm using Node.js only (no framework).
+Web app to show overview and detailed farm products using Node.js (no framework).
 
 ![Node Farm Overview](docs/node_farm.png?raw=true)
 
