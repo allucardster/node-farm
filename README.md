@@ -10,11 +10,17 @@ Stack
 
 Setup
 =====
-- Run the application using node command:
+- Install dependencies:
+```sh
+:~$ npm install
+```
+- Run the application:
 ```sh
 :~$ npm start
 ```
 - Open http://localhost:8000 in a web browser (Chrome, Firefox, etc)
+
+Note: In order to change the default web server port (8000) for another one just create a `.env` and set `PORT=YOUR_CUSTOM_PORT` and run the application again.
 
 Contributors
 ============
