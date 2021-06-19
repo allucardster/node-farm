@@ -12,7 +12,7 @@ Setup
 =====
 - Run the application using node command:
 ```sh
-:~$ node index.js
+:~$ npm start
 ```
 - Open http://localhost:8000 in a web browser (Chrome, Firefox, etc)
 
