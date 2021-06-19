@@ -1,16 +1,29 @@
 const http = require('http');
 const app = require('./src');
 
-const server = http.createServer((req, res) => {
+const getUrl = (req) => {
   const reqUrl = new URL(req.url, `http://${req.headers.host}`);
+  const productSlug = (reqUrl.pathname.match(/(?<=\/product\/).*$/gm) || [null]).pop();
+
+  if (null !== productSlug) {
+    reqUrl.pathname = '/product';
+    reqUrl.searchParams.append('slug', productSlug);
+  }
+
+  return reqUrl;
+}
+
+const server = http.createServer((req, res) => {
+  const reqUrl = getUrl(req);
+  
   switch (reqUrl.pathname) {
     case '/overview':
       res.writeHead(301, 'Redirecting to "/"', {'Location': '/'});
       res.end();
       break;
     case '/product':
-      const id = reqUrl.searchParams.get('id');
-      app.productController(id, res);
+      const slug = reqUrl.searchParams.get('slug');
+      app.productController(slug, res);
       break;
     case '/':
       app.overviewController(res);

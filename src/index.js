@@ -32,8 +32,8 @@ const overviewController = (res) => {
   renderComponent(overviewComponent, props, res);
 }
 
-const productController = (id, res) => {
-  const product = api.findById(id);
+const productController = (slug, res) => {
+  const product = api.findBySlug(slug);
   const props = {
     product,
     title: product ? `${product.productName} ${product.image}` : null
